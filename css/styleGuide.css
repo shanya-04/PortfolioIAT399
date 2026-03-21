@@ -1,0 +1,43 @@
+
+/*fonts*/
+@font-face {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  src: url(/fonts/);
+}
+
+/* Color Palette */
+:root {
+  --background-color: #F7F4EA;
+  --primary-color: #47412e;
+  --secondary-color: #A8BBA3;
+  --highlight-color: #B87C4C;
+  --box-color: #EBD9D1;
+}
+
+body{
+  font-family: Impact;
+  overflow-x: hidden;
+  padding:2rem;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+h1{
+
+}
+
+h2 {
+ 
+}
+
+h3 {
+  
+}
+
+h4 {
+  
+}
+
+p {
+  
+}
