@@ -28,6 +28,239 @@
       </nav>
 
     </header>
+
+    <section id="combined_elements">
+      <h2>Combined Elements</h2>
+ 
+ 
+      <!-- ───────────────────────────────────────────────────────
+           PROJECT CARD
+           Combines: image-as-link + heading + paragraph + tag text
+           Used on: index.html (work section) and projects.html
+           ─────────────────────────────────────────────────────── -->
+      <section class="element">
+        <h3>Project Card</h3>
+ 
+        <h4>CSS Selectors:</h4>
+        <p>.card · .card-img-placeholder / .card-img · .card-body · .card-tag · .card-title · .card-desc</p>
+ 
+        <h4>Elements Combined:</h4>
+        <p>Image as a link + heading (h3) + paragraph + small uppercase tag text</p>
+ 
+        <h4>Sample Code:</h4>
+        <code>&lt;article class="card"&gt;
+  &lt;a class="img-as-link" href="project.html"&gt;
+    &lt;img class="card-img" src="img/project.jpg" alt="Project screenshot"&gt;
+  &lt;/a&gt;
+  &lt;div class="card-body"&gt;
+    &lt;p class="card-tag"&gt;UX / UI Design&lt;/p&gt;
+    &lt;h3 class="card-title"&gt;Project Title&lt;/h3&gt;
+    &lt;p class="card-desc"&gt;Short project description.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code>
+ 
+        <h4>Rendered Element:</h4>
+        <div style="max-width:300px;">
+          <article class="card">
+            <div class="card-img-placeholder"></div>
+            <div class="card-body">
+              <p class="card-tag">UX / UI Design</p>
+              <h3 class="card-title">Project Title</h3>
+              <p class="card-desc">Short description of the project — what it is, what problem it solves, and your role.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+ 
+ 
+      <!-- ───────────────────────────────────────────────────────
+           NAVIGATION LINK + TEXT LABEL
+           Combines: nav link button + paragraph label
+           Used on: site nav, filter bar
+           ─────────────────────────────────────────────────────── -->
+      <section class="element">
+        <h3>Navigation Link with Label</h3>
+ 
+        <h4>CSS Selectors:</h4>
+        <p>.button-nav · p (body text)</p>
+ 
+        <h4>Elements Combined:</h4>
+        <p>Navigation link button + descriptive paragraph text</p>
+ 
+        <h4>Sample Code:</h4>
+        <code>&lt;p&gt;Ready to see the work?&lt;/p&gt;
+&lt;a class="button-nav" href="projects.html"&gt;View Projects&lt;/a&gt;</code>
+ 
+        <h4>Rendered Element:</h4>
+        <p>Ready to see the work?</p>
+        <a class="button-nav" href="projects.html" style="margin-top:0.75rem; display:inline-block;">View Projects</a>
+      </section>
+ 
+ 
+      <!-- ───────────────────────────────────────────────────────
+           IN-TEXT LINK INSIDE PARAGRAPH
+           Combines: paragraph + in-text link
+           Used on: about section, contact text
+           ─────────────────────────────────────────────────────── -->
+      <section class="element">
+        <h3>In-Text Link Inside Paragraph</h3>
+ 
+        <h4>CSS Selectors:</h4>
+        <p>p · .in-text-link</p>
+ 
+        <h4>Elements Combined:</h4>
+        <p>Body paragraph + inline anchor link</p>
+ 
+        <h4>Sample Code:</h4>
+        <code>&lt;p&gt;
+  I'm currently studying at
+  &lt;a class="in-text-link" href="https://www.sfu.ca"&gt;Simon Fraser University&lt;/a&gt;,
+  where I focus on interactive design and development.
+&lt;/p&gt;</code>
+ 
+        <h4>Rendered Element:</h4>
+        <p>
+          I'm currently studying at
+          <a class="in-text-link" href="#">Simon Fraser University</a>,
+          where I focus on interactive design and development.
+        </p>
+      </section>
+ 
+ 
+      <!-- ───────────────────────────────────────────────────────
+           LABELLED TEXT INPUT (CONTACT FORM ROW)
+           Combines: label + text input field
+           Used on: contact / form sections
+           ─────────────────────────────────────────────────────── -->
+      <section class="element">
+        <h3>Labelled Input Field</h3>
+ 
+        <h4>CSS Selectors:</h4>
+        <p>.label · .text-area</p>
+ 
+        <h4>Elements Combined:</h4>
+        <p>Form label + text input, paired as a single accessible field unit</p>
+ 
+        <h4>Sample Code:</h4>
+        <code>&lt;label class="label" for="input-name"&gt;Your Name&lt;/label&gt;
+&lt;input class="text-area" type="text" id="input-name" placeholder="Sam Black"&gt;
+ 
+&lt;label class="label" for="input-email"&gt;Email Address&lt;/label&gt;
+&lt;input class="text-area" type="email" id="input-email" placeholder="sam@example.com"&gt;</code>
+ 
+        <h4>Rendered Element:</h4>
+        <div style="display:flex; flex-direction:column; gap:1rem; max-width:360px;">
+          <div>
+            <label class="label" for="demo-name">Your Name</label>
+            <input class="text-area" type="text" id="demo-name" placeholder="Sam Black">
+          </div>
+          <div>
+            <label class="label" for="demo-email">Email Address</label>
+            <input class="text-area" type="email" id="demo-email" placeholder="sam@example.com">
+          </div>
+        </div>
+      </section>
+ 
+ 
+      <!-- ───────────────────────────────────────────────────────
+           SUBMIT BUTTON + FORM FIELDS (CONTACT FORM)
+           Combines: label + text input + submit button
+           Used on: contact section
+           ─────────────────────────────────────────────────────── -->
+      <section class="element">
+        <h3>Contact Form</h3>
+ 
+        <h4>CSS Selectors:</h4>
+        <p>.label · .text-area · .button-submit</p>
+ 
+        <h4>Elements Combined:</h4>
+        <p>Labelled inputs + submit and reset buttons — a full minimal form unit</p>
+ 
+        <h4>Sample Code:</h4>
+        <code>&lt;label class="label" for="msg-name"&gt;Name&lt;/label&gt;
+&lt;input class="text-area" type="text" id="msg-name" placeholder="Your name"&gt;
+ 
+&lt;label class="label" for="msg-body"&gt;Message&lt;/label&gt;
+&lt;input class="text-area" type="text" id="msg-body" placeholder="Your message"&gt;
+ 
+&lt;input class="button-submit" type="submit" value="Send Message"&gt;
+&lt;input class="button-submit" type="reset" value="Clear"&gt;</code>
+ 
+        <h4>Rendered Element:</h4>
+        <div style="display:flex; flex-direction:column; gap:1rem; max-width:360px;">
+          <div>
+            <label class="label" for="form-name">Name</label>
+            <input class="text-area" type="text" id="form-name" placeholder="Your name">
+          </div>
+          <div>
+            <label class="label" for="form-msg">Message</label>
+            <input class="text-area" type="text" id="form-msg" placeholder="Your message">
+          </div>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <input class="button-submit" type="submit" value="Send Message">
+            <input class="button-submit" type="reset" value="Clear">
+          </div>
+        </div>
+      </section>
+ 
+ 
+      <!-- ───────────────────────────────────────────────────────
+           SECTION HEADER — LABEL + HEADING + PARAGRAPH
+           Combines: section-label text + h2 heading + paragraph
+           Used on: every content section on index + projects
+           ─────────────────────────────────────────────────────── -->
+      <section class="element">
+        <h3>Section Header Block</h3>
+ 
+        <h4>CSS Selectors:</h4>
+        <p>.section-label · h2 (.section-title) · p</p>
+ 
+        <h4>Elements Combined:</h4>
+        <p>Small uppercase label + display heading + body paragraph — the opening block of every content section</p>
+ 
+        <h4>Sample Code:</h4>
+        <code>&lt;p class="section-label"&gt;Selected Work&lt;/p&gt;
+&lt;h2 class="section-title"&gt;Projects&lt;/h2&gt;
+&lt;p&gt;A selection of recent work across design and development.&lt;/p&gt;</code>
+ 
+        <h4>Rendered Element:</h4>
+        <p class="section-label">Selected Work</p>
+        <h2 class="section-title">Projects</h2>
+        <p>A selection of recent work across design and development.</p>
+      </section>
+ 
+ 
+      <!-- ───────────────────────────────────────────────────────
+           IMAGE AS LINK + CAPTION TEXT
+           Combines: image-as-link + paragraph caption
+           Used on: project cards, brand page
+           ─────────────────────────────────────────────────────── -->
+      <section class="element">
+        <h3>Image Link with Caption</h3>
+ 
+        <h4>CSS Selectors:</h4>
+        <p>.img-as-link · p</p>
+ 
+        <h4>Elements Combined:</h4>
+        <p>Clickable image wrapped in an anchor + a supporting caption paragraph</p>
+ 
+        <h4>Sample Code:</h4>
+        <code>&lt;a class="img-as-link" href="project.html"&gt;
+  &lt;img src="img/project-thumb.jpg" width="300" height="200" alt="Project preview"&gt;
+&lt;/a&gt;
+&lt;p&gt;Project title — UX/UI Design, 2025&lt;/p&gt;</code>
+ 
+        <h4>Rendered Element:</h4>
+        <div style="display:inline-block;">
+          <a class="img-as-link" href="#">
+            <div style="width:300px; height:180px; background-color:var(--secondary-color); opacity:0.6; border-radius:var(--radius-md);"></div>
+          </a>
+          <p style="margin-top:0.5rem; font-size:0.88rem; color:var(--text-muted);">Project Title — UX/UI Design, 2025</p>
+        </div>
+      </section>
+ 
+ 
+    </section>
     
     </body>
 </html>
