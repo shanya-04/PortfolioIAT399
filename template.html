@@ -28,6 +28,134 @@
       </nav>
 
     </header>
+
+    <!-- TEMPLATE SECTION-->
+    <section id="template_section">
+
+      <h2>Page Template</h2>
+
+      <p style="margin-bottom:2rem; color:var(--text-muted);">
+        This is the reusable layout template for all portfolio pages.
+      </p>
+
+      <!-- Full rendered template preview inside a contained wrapper -->
+      <div style="border:1.5px solid var(--border-color); border-radius:var(--radius-lg); overflow:hidden; margin-bottom:3rem;">
+ 
+        <!-- SITE NAV -->
+        <nav class="site-nav" style="position:relative; backdrop-filter:none;">
+          <span class="nav-logo">Rita ·</span>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+ 
+        <!-- HERO SECTION -->
+        <section class="hero" style="min-height:420px; background-color:var(--background-color);">
+          <p class="hero-eyebrow fade-up">[ Page Label / Category ]</p>
+          <h1 class="fade-up">Page <em>Title</em><br>Goes Here</h1>
+          <p class="hero-sub fade-up">A short description of this page's content or purpose. Keep it to two sentences max for visual balance.</p>
+          <div class="hero-cta fade-up">
+            <a href="#" class="btn-primary">Primary Action</a>
+            <a href="#" class="btn-ghost">Secondary Action</a>
+          </div>
+        </section>
+ 
+        <!-- MAIN CONTENT SECTION -->
+        <main class="site-main" style="padding-top:0;">
+ 
+          <!-- Content Section -->
+          <section class="section" id="work">
+            <p class="section-label">Section Label</p>
+            <h2 class="section-title">Section Heading</h2>
+ 
+            <!-- Card Grid — repeat .card as needed -->
+            <div class="cards-grid">
+ 
+              <article class="card">
+                <div class="card-img-placeholder"></div>
+                <div class="card-body">
+                  <p class="card-tag">Category Tag</p>
+                  <h3 class="card-title">Project Title</h3>
+                  <p class="card-desc">Short description of the project. What it was, what role you played.</p>
+                </div>
+              </article>
+ 
+              <article class="card">
+                <div class="card-img-placeholder"></div>
+                <div class="card-body">
+                  <p class="card-tag">Category Tag</p>
+                  <h3 class="card-title">Project Title</h3>
+                  <p class="card-desc">Short description of the project. What it was, what role you played.</p>
+                </div>
+              </article>
+ 
+              <article class="card">
+                <div class="card-img-placeholder"></div>
+                <div class="card-body">
+                  <p class="card-tag">Category Tag</p>
+                  <h3 class="card-title">Project Title</h3>
+                  <p class="card-desc">Short description of the project. What it was, what role you played.</p>
+                </div>
+              </article>
+ 
+            </div>
+          </section>
+ 
+          <!-- About Strip -->
+          <section class="section" id="about">
+            <div class="about-strip">
+              <div class="about-text">
+                <p class="section-label">About</p>
+                <h2>A bit about<br><em style="font-style:italic; color:var(--highlight-color);">this page</em></h2>
+                <p>Replace this with relevant body copy. Use this strip for intros, bios, or any two-column text + visual layout.</p>
+                <a href="#" class="btn-ghost" style="margin-top:1rem;">Learn More</a>
+              </div>
+              <div class="about-img-box"></div>
+            </div>
+          </section>
+ 
+        </main>
+ 
+        <!-- FOOTER -->
+        <footer class="site-footer">
+          <p>© 2025 Rita. All rights reserved.</p>
+          <ul class="footer-links">
+            <li><a href="https://www.linkedin.com/in/shan-ya-hu/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/shanya-04" target="_blank">GitHub</a></li>
+            <li><a href="mailto:shanyahu2004@gmail.com">Email</a></li>
+          </ul>
+        </footer>
+ 
+      </div>
+    
+      <!-- Template code reference -->
+      <div class="element">
+        <h3>Template Structure</h3>
+        <h4>Key Sections</h4>
+        <ol>
+          <li><code style="display:inline;">&lt;nav class="site-nav"&gt;</code> — fixed top navigation bar</li>
+          <li><code style="display:inline;">&lt;section class="hero"&gt;</code> — full-height hero with eyebrow, h1, subtitle, CTAs</li>
+          <li><code style="display:inline;">&lt;section class="section"&gt;</code> — reusable content section with label + title</li>
+          <li><code style="display:inline;">&lt;div class="cards-grid"&gt;</code> — responsive card grid for projects</li>
+          <li><code style="display:inline;">&lt;div class="about-strip"&gt;</code> — two-column about/intro strip</li>
+          <li><code style="display:inline;">&lt;footer class="site-footer"&gt;</code> — footer with copyright and links</li>
+        </ol>
+ 
+        <h4>Available Classes</h4>
+        <ol>
+          <li><code style="display:inline;">.btn-primary</code> — filled dark button</li>
+          <li><code style="display:inline;">.btn-ghost</code> — outline button</li>
+          <li><code style="display:inline;">.fade-up</code> — entrance animation (add to hero children)</li>
+          <li><code style="display:inline;">.section-label</code> — small uppercase terracotta label</li>
+          <li><code style="display:inline;">.section-title</code> — display-font section heading</li>
+          <li><code style="display:inline;">.card</code> — project card with hover lift</li>
+        </ol>
+      </div>
+ 
+    </section>
     
     </body>
 </html>
