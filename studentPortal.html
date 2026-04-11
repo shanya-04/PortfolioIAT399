@@ -36,11 +36,12 @@
   <header class="project-hero" aria-labelledby="project-title">
 
     <div class="project-hero-inner">
-      <p class="hero-eyebrow fade-up">[ Category · Year ]</p>
-      <h1 id="project-title" class="fade-up">Project <em class="accent">Title</em></h1>
+      <p class="hero-eyebrow fade-up">[ UX/UI & HCI · 2025 ]</p>
+      <h1 id="project-title" class="fade-up">Project <em class="accent">SFU Student Portal</em></h1>
       <p class="hero-sub fade-up">
-        A one or two sentence summary of the project — what it is, what problem it
-        addresses, and the key outcome.
+        Exploring possible improvements and re-design on Simon Fraser University's Student 
+        Portal known as Go.SFU to allow users to pay tuition, select courses, apply for scholarships, 
+        enrolment schedule and much more.
       </p>
 
       <!-- Project metadata strip -->
@@ -72,12 +73,9 @@
   </header>
 
 
-  <!-- ── COVER IMAGE ── -->
-  <!-- Replace the placeholder div with:
-       <img src="img/project-cover.jpg" alt="[descriptive alt text]">
-       wrapped inside .project-cover                                     -->
-  <div class="project-cover" role="img" aria-label="Project cover image placeholder">
-    <div class="project-cover-placeholder"></div>
+  <!-- ── COVER IMAGE ── -->                       
+  <div class="project-cover" role="img" aria-label="Student Portal project cover image">
+    <img src="img/sfuCover.png" alt="sfu cover project image">
   </div>
 
 
@@ -109,21 +107,19 @@
           <h2 id="overview-heading">Project <em class="accent">Context</em></h2>
 
           <p>
-            Provide a concise overview of the project here. What was it, who was it for,
-            and what was your role? Give the reader enough context to understand the rest
-            of the case study.
+            This project aims to pin point the possible challenges users (in this case students) 
+            go through using the original website, utilizing memory, cognition, and testing to 
+            provide solutions in lessening stress, reducing information overload and allow first time users 
+            (mainly first year students) to easily navigate the site with or without guided tutorial.
           </p>
-          <p>
-            You can add a second paragraph if needed. Keep it factual and objective —
-            the deeper analysis comes in the sections below.
-          </p>
-
-          <!-- Optional: full-width image or mockup -->
-          <div class="img-full reveal reveal-delay-1">
-            <!-- Replace with: <img src="img/overview.jpg" alt="[description]"> -->
-            <div class="img-placeholder" role="img" aria-label="Overview image placeholder"></div>
-          </div>
-
+          <ul>My Focus / Role:
+            <li>Decluttering the original website and collapsing information.</li>
+            <li>Determine importance of information and usage frequency.</li>
+            <li>Lessen stress on students during enrollment times and course selections.</li>
+            <li>Prototype improved interface on Figma.</li>
+            <li>Focus on simplicity, usability, and aesthetics.</li>
+            <li>Universal accessibility regardless intelligence and language barriers.</li>
+          </ul>
         </section>
 
 
@@ -133,19 +129,23 @@
           <h2 id="problem-heading">What needed to be <em class="accent">solved?</em></h2>
 
           <p>
-            Describe the core problem this project was addressing. Be specific — who is
-            affected, in what context, and why existing solutions were insufficient.
+            Students rely on portals to manage critical parts of their academic life, 
+            yet they are often met with cluttered, unintuitive systems that don’t align 
+            with how they think or prioritize tasks. In the context of fast-paced academic environments,
+             this creates unnecessary stress, wasted time, and missed information.
           </p>
           <p>
-            Frame the problem from a human-centred perspective: whose experience was
-            broken, and what were the real-world consequences?
+            Existing solutions focus heavily on functionality over experience, failing to consider human 
+            behavior, cognitive load, and personalization—resulting in tools that technically work, but don’t 
+            truly support students in navigating their daily decisions efficiently.
           </p>
 
           <!-- Callout / key insight quote -->
           <blockquote class="callout reveal reveal-delay-1" aria-label="Key insight">
             <p>
-              "Replace this with your key problem insight or a quote from user research
-              that captures the core pain."
+              "Students don’t just need access to information—they need clear, 
+              intuitive, and personalized digital experiences that reduce cognitive overload 
+              and simplify decision-making."
             </p>
           </blockquote>
 
@@ -158,33 +158,18 @@
           <h2 id="painpoints-heading">Identified <em class="accent">Pain Points</em></h2>
 
           <p>
-            List the specific friction points discovered through research, observation,
-            or heuristic evaluation. Each item should be a discrete, actionable problem.
+            Friction points include overwhelming and disorganized information architecture, lack of prioritization, and a non-intuitive interface that doesn’t align with user mental models.
+             This leads to stress, confusion, and inefficiency, especially during critical times like course registration or financial aid applications.
           </p>
 
           <ul class="pain-points" aria-label="List of pain points">
-            <li>Pain point one — describe the issue clearly and concisely.</li>
-            <li>Pain point two — include why it matters to the user or task.</li>
-            <li>Pain point three — note any supporting evidence if available.</li>
-            <li>Pain point four — keep each point focused on one issue.</li>
+            <li>Pain Point 1. <br>Too many features, tabs, and systems, with fragmented and overwhelming amounts of information. Users need a centralized,
+            intuitive access to essential information.</li>
+            <li>Pain Point 2. <br>Poor usability and navigation frustration due to outdated, unintuitive, and hard to navigate portals.
+                Struggles with simple tasks occur. Students expect modern, seamless digital experiences, but institutional systems lag behind.</li>
+            <li>Pain Point 3. <br>Lack of personalization leads to little engagement. Individual needs are not adapted and highlighted for relevant actions.
+                User-centred interfaces needs to be included and personalized to prioritize user's needs.</li>
           </ul>
-
-          <!-- Two-up image pair: e.g. before / after screenshots -->
-          <div class="img-grid-2 reveal reveal-delay-1">
-
-            <figure>
-              <!-- Replace with: <img src="img/before.jpg" alt="[description]"> -->
-              <div class="img-grid-placeholder" role="img" aria-label="Before image placeholder"></div>
-              <figcaption>Before — current state</figcaption>
-            </figure>
-
-            <figure>
-              <!-- Replace with: <img src="img/after.jpg" alt="[description]"> -->
-              <div class="img-grid-placeholder" role="img" aria-label="After image placeholder"></div>
-              <figcaption>After — proposed solution</figcaption>
-            </figure>
-
-          </div>
 
         </section>
 
@@ -204,40 +189,47 @@
 
             <div class="process-step reveal reveal-delay-1" role="listitem">
               <p class="process-step-num" aria-hidden="true">01</p>
-              <h3>Research</h3>
-              <p>Competitive analysis, user interviews, or secondary research.</p>
+              <h3>Step 1</h3>
+              <p>Research on user feedback with how frequently students need to interact with the collective information on original website.</p>
             </div>
 
             <div class="process-step reveal reveal-delay-2" role="listitem">
               <p class="process-step-num" aria-hidden="true">02</p>
-              <h3>Define</h3>
-              <p>Synthesising findings into personas, HMW questions, and goals.</p>
+              <h3>Step 2</h3>
+              <p>Re-arranging first, second and third priority items into collapsable sections to reduce information overload.</p>
             </div>
 
             <div class="process-step reveal reveal-delay-3" role="listitem">
               <p class="process-step-num" aria-hidden="true">03</p>
-              <h3>Ideate</h3>
-              <p>Sketching, wireframing, and exploring multiple directions.</p>
+              <h3>Step 3</h3>
+              <p>Excluding unnecessary information pages that are not used. Sketching, wireframing, and exploring multiple directions.</p>
             </div>
 
             <div class="process-step reveal reveal-delay-1" role="listitem">
               <p class="process-step-num" aria-hidden="true">04</p>
-              <h3>Prototype</h3>
-              <p>High-fidelity Figma prototype with interactive flows.</p>
+              <h3>Step 4</h3>
+              <p>Group actionable items users need to or are recommended to complete such as waivers, application, and payments.</p>
             </div>
 
             <div class="process-step reveal reveal-delay-2" role="listitem">
               <p class="process-step-num" aria-hidden="true">05</p>
-              <h3>Test</h3>
-              <p>Usability testing rounds and iterative refinement.</p>
+              <h3>Step 5</h3>
+              <p>Utilizing high contrast colours (red on white, black on white) for visibility on sections and important information (course enrollment).</p>
+            </div>
+
+            <div class="process-step reveal reveal-delay-2" role="listitem">
+              <p class="process-step-num" aria-hidden="true">06</p>
+              <h3>Step 6</h3>
+              <p>Students often forget where to find their specific course enrollment date and time + open enrollment, a dedicated highlight underneath course schedule helps as reminders.</p>
+            </div>
+
+            <div class="process-step reveal reveal-delay-2" role="listitem">
+              <p class="process-step-num" aria-hidden="true">07</p>
+              <h3>Step 7</h3>
+              <p>Consistent font choice, university colours (red, black, white) to keep branding and visual identity.</p>
             </div>
 
           </div>
-
-          <p>
-            Add any additional narrative about key decisions, pivots, or
-            constraints that shaped the process.
-          </p>
 
         </section>
 
@@ -247,44 +239,27 @@
           <span class="section-label">05 — Visuals</span>
           <h2 id="visuals-heading">Design <em class="accent">Artefacts</em></h2>
 
-          <p>
-            Include key deliverables here — wireframes, mockups, prototypes, posters,
-            or process work. Add captions to provide context for each image.
-          </p>
-
-          <!-- Full-width image -->
-          <div class="img-full reveal reveal-delay-1">
-            <!-- Replace with: <img src="img/mockup-full.jpg" alt="[description]"> -->
-            <div class="img-placeholder" role="img" aria-label="Full-width mockup placeholder"></div>
-          </div>
-
-          <!-- Three-up grid — sketches, wireframes, or details -->
-          <div class="img-grid-3 reveal reveal-delay-2">
+           <!-- Two-up image pair: e.g. before / after screenshots -->
+          <div class="img-grid-3-portrait reveal reveal-delay-1">
 
             <figure>
-              <div class="img-grid-placeholder" role="img" aria-label="Sketch placeholder"></div>
-              <figcaption>Early sketches</figcaption>
+              <img src="img/before.png" alt="before proposed solution of student portal">
+              <figcaption>Before — current state</figcaption>
             </figure>
-
+            
             <figure>
-              <div class="img-grid-placeholder" role="img" aria-label="Wireframe placeholder"></div>
-              <figcaption>Mid-fi wireframe</figcaption>
+              <img src="img/after.png" alt="after proposed solution of student portal">
+              <figcaption>After — proposed solution</figcaption>
             </figure>
-
-            <figure>
-              <div class="img-grid-placeholder" role="img" aria-label="Final mockup placeholder"></div>
-              <figcaption>Final hi-fi mockup</figcaption>
-            </figure>
-
           </div>
 
-          <!-- Another full-width image if needed -->
-          <div class="img-full reveal reveal-delay-3">
-            <div class="img-placeholder" role="img" aria-label="Second full-width image placeholder"></div>
+          <div class="img-grid-3 reveal reveal-delay-1">
+            <figure>
+              <img src="img/sections.png" alt="smaller sections that make up of solution">
+              <figcaption>Elements of solution.</figcaption>
+            </figure>
           </div>
-
         </section>
-
 
         <!-- ⑥ CHALLENGES -->
         <section class="analysis-section reveal" id="challenges" aria-labelledby="challenges-heading">
@@ -303,26 +278,19 @@
           <!-- You can use an ordered list to structure each challenge -->
           <ol aria-label="Challenges encountered">
             <li>
-              <strong>Challenge one</strong> — describe the issue, then explain how
-              you addressed it or what compromises were made.
+              <strong>Applying HCI Principles & Human Psychology:</strong> <br>   A major challenge was 
+              incorporating human-computer interaction principles and user psychology into the design—understanding
+               how students think, process information, and make decisions to ensure the interface felt intuitive rather than overwhelming.
             </li>
             <li>
-              <strong>Challenge two</strong> — describe the issue, then explain how
-              you addressed it or what compromises were made.
+              <strong>Organizing Complex Information Architecture:</strong> <br>    Another significant obstacle was determining
+              how to structure large amounts of student data (courses, finances, services) in a way that is accessible to users regardless of their technical expertise.
             </li>
             <li>
-              <strong>Challenge three</strong> — describe the issue, then explain how
-              you addressed it or what compromises were made.
+              <strong>Balancing Simplicity with Feature Depth:</strong> <br>    I had difficulty ensuring the interface 
+              remained clean and minimal while still accommodating all necessary features and functionalities.
             </li>
           </ol>
-
-          <!-- Optional callout for a specific insight from this section -->
-          <blockquote class="callout reveal reveal-delay-1" aria-label="Key challenge insight">
-            <p>
-              "An optional quote or reflection that captures the most important
-              lesson from the challenges you faced."
-            </p>
-          </blockquote>
 
         </section>
 
@@ -332,50 +300,36 @@
           <span class="section-label">07 — Key Learnings</span>
           <h2 id="learnings-heading">What I <em class="accent">took away</em></h2>
 
-          <p>
-            Reflect on what this project taught you — about the craft, about users,
-            about collaboration, or about yourself as a designer.
-          </p>
-
-          <!-- Learning cards — add or remove as needed -->
+          <!-- Learning cards -->
           <div class="learnings-grid" role="list" aria-label="Key learnings">
 
             <div class="learning-card reveal reveal-delay-1" role="listitem">
               <p class="learning-card-icon" aria-hidden="true">01.</p>
-              <h3>Learning Title</h3>
-              <p>A short description of this specific takeaway and why it matters going forward.</p>
+              <h3>Good UX Is About Reducing Cognitive Load</h3>
+              <p>I learned that effective design isn’t about adding more—it’s about prioritizing
+                 and simplifying information so users can act quickly and confidently.</p>
             </div>
 
             <div class="learning-card reveal reveal-delay-2" role="listitem">
               <p class="learning-card-icon" aria-hidden="true">02.</p>
-              <h3>Learning Title</h3>
-              <p>A short description of this specific takeaway and why it matters going forward.</p>
+              <h3>Structure Is the Foundation of Good Design</h3>
+              <p>A strong information hierarchy is crucial—without it, 
+                even visually appealing designs fail to function effectively.</p>
             </div>
 
             <div class="learning-card reveal reveal-delay-3" role="listitem">
               <p class="learning-card-icon" aria-hidden="true">03.</p>
-              <h3>Learning Title</h3>
-              <p>A short description of this specific takeaway and why it matters going forward.</p>
-            </div>
-
-            <div class="learning-card reveal reveal-delay-1" role="listitem">
-              <p class="learning-card-icon" aria-hidden="true">04.</p>
-              <h3>Learning Title</h3>
-              <p>A short description of this specific takeaway and why it matters going forward.</p>
+              <h3>User-Centered Design Drives Better Decisions</h3>
+              <p>Designing from the perspective of a student helped me 
+                focus on real needs (speed, clarity, accessibility) rather than just aesthetics.</p>
             </div>
 
           </div>
-
-          <p>
-            End with a forward-looking sentence — how will these learnings influence
-            your next project or professional direction?
-          </p>
-
         </section>
 
 
-      </div><!-- /case-study-body -->
-    </div><!-- /case-study -->
+      </div>
+    </div>
 
 
     <!-- ── NEXT PROJECT STRIP ── -->
