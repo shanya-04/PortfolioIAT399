@@ -160,7 +160,7 @@
 }
 
 
-/* ── MARQUEE TICKER — pure CSS, no JS ── */
+/* ── MARQUEE TICKER */
 .marquee-wrap {
   overflow: hidden;
   border-top: 1px solid var(--border-color);
@@ -270,7 +270,6 @@
   box-shadow: 0 16px 40px rgba(71, 65, 46, 0.12);
 }
 
-/* Use this when you have a real image */
 .card-img {
   width: 100%;
   aspect-ratio: 5.5/ 3;
@@ -326,7 +325,6 @@
   max-width: none;
 }
 
-/* Featured: spans 2 columns, side-by-side image + text */
 .card.card-featured {
   grid-column: span 2;
   display: grid;
