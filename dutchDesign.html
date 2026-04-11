@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Project Title — Rita</title>
+  <meta name="description" content="Case study for Dutch Design Week Poster — [brief one-line description].">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link href="css/styleGuide.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <style>
+    /* ── PROJECT PAGE LAYOUT ── */
+
+    /* Offset all content below fixed nav */
+    .project-page {
+      padding-top: 4.5rem;
+    }
+
+    /* ── PROJECT HERO ── */
+    .project-hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Decorative circle — mirrors index.html hero */
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      top: -8%;
+      right: -6%;
+      width: 34rem;
+      height: 34rem;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    /* Second softer circle bottom-left */
+    .project-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -12%;
+      left: -5%;
+      width: 22rem;
+      height: 22rem;
+      border-radius: 50%;
+      background-color: var(--box-color);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .project-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 52rem;
+    }
+
+    .project-hero h1 {
+      margin-bottom: var(--space-md);
+    }
+
+    .project-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm) var(--space-lg);
+      margin-top: var(--space-lg);
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .meta-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .meta-value {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--primary-color);
+      max-width: none;
+      line-height: 1.3;
+    }
+
+    /* ── HERO COVER IMAGE ── */
+    .project-cover {
+      width: 100%;
+      max-height: 36rem;
+      overflow: hidden;
+      background-color: var(--secondary-color);
+      opacity: 0.7;
+    }
+
+    .project-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Placeholder when no image is ready */
+    .project-cover-placeholder {
+      width: 100%;
+      height: 28rem;
+      background-color: var(--secondary-color);
+      opacity: 0.45;
+      display: block;
+    }
+
+    /* ── CASE STUDY LAYOUT ── */
+    .case-study {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: var(--space-2xl) var(--space-xl);
+      display: grid;
+      grid-template-columns: 14rem 1fr;
+      gap: 0 var(--space-xl);
+      align-items: start;
+    }
+
+    /* Sticky sidebar TOC */
+    .case-study-toc {
+      position: sticky;
+      top: 5.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .toc-label {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-sm);
+    }
+
+    .toc-link {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      padding: 0.3rem 0.6rem;
+      border-left: 1.5px solid var(--border-color);
+      transition: color var(--transition), border-color var(--transition);
+      line-height: 1.4;
+    }
+
+    .toc-link:hover,
+    .toc-link.active {
+      color: var(--highlight-color);
+      border-left-color: var(--highlight-color);
+    }
+
+    /* Main content column */
+    .case-study-body {
+      min-width: 0; /* prevents grid blowout */
+    }
+
+    /* ── ANALYSIS SECTIONS ── */
+    .analysis-section {
+      padding: var(--space-xl) 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .analysis-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .analysis-section .section-label {
+      display: block;
+      margin-bottom: var(--space-sm);
+    }
+
+    .analysis-section h2 {
+      margin-bottom: var(--space-lg);
+    }
+
+    .analysis-section p {
+      margin-bottom: var(--space-md);
+      max-width: 62ch;
+    }
+
+    .analysis-section ul,
+    .analysis-section ol {
+      max-width: 58ch;
+      margin-bottom: var(--space-md);
+    }
+
+    /* ── PAIN POINTS LIST ── */
+    .pain-points {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .pain-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      background-color: var(--box-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-md) var(--space-lg);
+    }
+
+    .pain-points li::before {
+      content: '—';
+      color: var(--highlight-color);
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    /* ── PROCESS STEPS ── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .process-step {
+      background-color: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      position: relative;
+    }
+
+    .process-step-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--secondary-color);
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+    }
+
+    .process-step h3 {
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-xs);
+    }
+
+    .process-step p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: none;
+    }
+
+    /* ── CALLOUT / QUOTE BLOCK ── */
+    .callout {
+      background-color: var(--box-color);
+      border-left: 3px solid var(--highlight-color);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--space-lg) var(--space-xl);
+      margin: var(--space-lg) 0;
+    }
+
+    .callout p {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--primary-color);
+      max-width: 52ch;
+      line-height: 1.5;
+    }
+
+    /* ── IMAGE BLOCKS ── */
+    /* Full-width single image */
+    .img-full {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin: var(--space-lg) 0;
+      background-color: var(--secondary-color);
+      opacity: 0.75;
+    }
+
+    .img-full img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Placeholder block for full image */
+    .img-placeholder {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background-color: var(--secondary-color);
+      opacity: 0.45;
+      display: block;
+      border-radius: var(--radius-lg);
+    }
+
+    /* Two-column image grid */
+    .img-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    /* Three-column image grid */
+    .img-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .img-grid-2 figure,
+    .img-grid-3 figure {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .img-grid-2 img,
+    .img-grid-3 img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      display: block;
+    }
+
+    /* Placeholder for grid images */
+    .img-grid-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background-color: var(--secondary-color);
+      opacity: 0.45;
+      border-radius: var(--radius-md);
+      display: block;
+    }
+
+    figcaption {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.4;
+    }
+
+    /* ── KEY LEARNINGS ── */
+    .learnings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .learning-card {
+      background-color: var(--box-color);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+    }
+
+    .learning-card-icon {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--highlight-color);
+      margin-bottom: var(--space-sm);
+      line-height: 1;
+    }
+
+    .learning-card h3 {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--space-xs);
+    }
+
+    .learning-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: none;
+    }
+
+    /* ── NEXT PROJECT STRIP ── */
+    .next-project {
+      border-top: 1px solid var(--border-color);
+      padding: var(--space-xl) var(--space-xl);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .next-project-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-xs);
+    }
+
+    .next-project-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 300;
+      color: var(--primary-color);
+      max-width: none;
+      line-height: 1.2;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(1.4rem);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Staggered delay helpers */
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.22s; }
+    .reveal-delay-3 { transition-delay: 0.34s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 62rem) {
+      .case-study {
+        grid-template-columns: 1fr;
+      }
+
+      .case-study-toc {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-xs);
+        padding-bottom: var(--space-lg);
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      .toc-link {
+        border-left: none;
+        border-bottom: 1.5px solid var(--border-color);
+        padding: 0.25rem 0.5rem;
+      }
+
+      .toc-link:hover,
+      .toc-link.active {
+        border-bottom-color: var(--highlight-color);
+        border-left-color: transparent;
+      }
+
+      .toc-label {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 48rem) {
+      .project-hero {
+        padding: var(--space-xl) var(--space-lg) var(--space-lg);
+        min-height: 70vh;
+      }
+
+      .img-grid-2,
+      .img-grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .learnings-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .next-project {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--space-lg);
+      }
+
+      .case-study {
+        padding: var(--space-xl) var(--space-lg);
+      }
+    }
+
+    @media (max-width: 30rem) {
+      .project-hero-meta {
+        flex-direction: column;
+        gap: var(--space-sm);
+      }
+    }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,
+      .fade-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="project-page">
+
+  <!-- ── SITE NAV ── -->
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a href="index.html" class="nav-logo" aria-label="Rita — home">Rita ·</a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ── PROJECT HERO ── -->
+  <header class="project-hero" aria-labelledby="project-title">
+
+    <div class="project-hero-inner">
+      <p class="hero-eyebrow fade-up">[ Category · Year ]</p>
+      <h1 id="project-title" class="fade-up">Project <em class="accent">Title</em></h1>
+      <p class="hero-sub fade-up">
+        A one or two sentence summary of the project — what it is, what problem it
+        addresses, and the key outcome.
+      </p>
+
+      <!-- Project metadata strip -->
+      <div class="project-hero-meta fade-up" role="list" aria-label="Project details">
+
+        <div class="meta-item" role="listitem">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">UX / UI Designer</span>
+        </div>
+
+        <div class="meta-item" role="listitem">
+          <span class="meta-label">Timeline</span>
+          <span class="meta-value">5 Weeks — 2025</span>
+        </div>
+
+        <div class="meta-item" role="listitem">
+          <span class="meta-label">Tools</span>
+          <span class="meta-value">Figma · Adobe Suite</span>
+        </div>
+
+        <div class="meta-item" role="listitem">
+          <span class="meta-label">Discipline</span>
+          <span class="meta-value">UX Research · Interaction Design</span>
+        </div>
+
+      </div>
+    </div>
+
+  </header>
+
+
+  <!-- ── COVER IMAGE ── -->
+  <!-- Replace the placeholder div with:
+       <img src="img/project-cover.jpg" alt="[descriptive alt text]">
+       wrapped inside .project-cover                                     -->
+  <div class="project-cover" role="img" aria-label="Project cover image placeholder">
+    <div class="project-cover-placeholder"></div>
+  </div>
+
+
+  <!-- ── MAIN CASE STUDY ── -->
+  <main id="main-content">
+
+    <div class="case-study">
+
+      <!-- ── STICKY TABLE OF CONTENTS ── -->
+      <nav class="case-study-toc" aria-label="Case study sections">
+        <p class="toc-label">Contents</p>
+        <a class="toc-link" href="#overview">Overview</a>
+        <a class="toc-link" href="#problem">Problem Statement</a>
+        <a class="toc-link" href="#pain-points">Pain Points</a>
+        <a class="toc-link" href="#process">Process</a>
+        <a class="toc-link" href="#images">Visuals</a>
+        <a class="toc-link" href="#challenges">Challenges</a>
+        <a class="toc-link" href="#learnings">Key Learnings</a>
+      </nav>
+
+
+      <!-- ── BODY CONTENT ── -->
+      <div class="case-study-body">
+
+
+        <!-- ① OVERVIEW -->
+        <section class="analysis-section reveal" id="overview" aria-labelledby="overview-heading">
+          <span class="section-label">01 — Overview</span>
+          <h2 id="overview-heading">Project <em class="accent">Context</em></h2>
+
+          <p>
+            Provide a concise overview of the project here. What was it, who was it for,
+            and what was your role? Give the reader enough context to understand the rest
+            of the case study.
+          </p>
+          <p>
+            You can add a second paragraph if needed. Keep it factual and objective —
+            the deeper analysis comes in the sections below.
+          </p>
+
+          <!-- Optional: full-width image or mockup -->
+          <div class="img-full reveal reveal-delay-1">
+            <!-- Replace with: <img src="img/overview.jpg" alt="[description]"> -->
+            <div class="img-placeholder" role="img" aria-label="Overview image placeholder"></div>
+          </div>
+
+        </section>
+
+
+        <!-- ② PROBLEM STATEMENT -->
+        <section class="analysis-section reveal" id="problem" aria-labelledby="problem-heading">
+          <span class="section-label">02 — Problem Statement</span>
+          <h2 id="problem-heading">What needed to be <em class="accent">solved?</em></h2>
+
+          <p>
+            Describe the core problem this project was addressing. Be specific — who is
+            affected, in what context, and why existing solutions were insufficient.
+          </p>
+          <p>
+            Frame the problem from a human-centred perspective: whose experience was
+            broken, and what were the real-world consequences?
+          </p>
+
+          <!-- Callout / key insight quote -->
+          <blockquote class="callout reveal reveal-delay-1" aria-label="Key insight">
+            <p>
+              "Replace this with your key problem insight or a quote from user research
+              that captures the core pain."
+            </p>
+          </blockquote>
+
+        </section>
+
+
+        <!-- ③ PAIN POINTS -->
+        <section class="analysis-section reveal" id="pain-points" aria-labelledby="painpoints-heading">
+          <span class="section-label">03 — Pain Points</span>
+          <h2 id="painpoints-heading">Identified <em class="accent">Pain Points</em></h2>
+
+          <p>
+            List the specific friction points discovered through research, observation,
+            or heuristic evaluation. Each item should be a discrete, actionable problem.
+          </p>
+
+          <ul class="pain-points" aria-label="List of pain points">
+            <li>Pain point one — describe the issue clearly and concisely.</li>
+            <li>Pain point two — include why it matters to the user or task.</li>
+            <li>Pain point three — note any supporting evidence if available.</li>
+            <li>Pain point four — keep each point focused on one issue.</li>
+          </ul>
+
+          <!-- Two-up image pair: e.g. before / after screenshots -->
+          <div class="img-grid-2 reveal reveal-delay-1">
+
+            <figure>
+              <!-- Replace with: <img src="img/before.jpg" alt="[description]"> -->
+              <div class="img-grid-placeholder" role="img" aria-label="Before image placeholder"></div>
+              <figcaption>Before — current state</figcaption>
+            </figure>
+
+            <figure>
+              <!-- Replace with: <img src="img/after.jpg" alt="[description]"> -->
+              <div class="img-grid-placeholder" role="img" aria-label="After image placeholder"></div>
+              <figcaption>After — proposed solution</figcaption>
+            </figure>
+
+          </div>
+
+        </section>
+
+
+        <!-- ④ PROCESS -->
+        <section class="analysis-section reveal" id="process" aria-labelledby="process-heading">
+          <span class="section-label">04 — Process</span>
+          <h2 id="process-heading">How I <em class="accent">approached it</em></h2>
+
+          <p>
+            Walk through your design or development process. What methods did you use?
+            What decisions were made at each stage, and why?
+          </p>
+
+          <!-- Step cards — duplicate or remove as needed -->
+          <div class="process-steps" role="list" aria-label="Design process steps">
+
+            <div class="process-step reveal reveal-delay-1" role="listitem">
+              <p class="process-step-num" aria-hidden="true">01</p>
+              <h3>Research</h3>
+              <p>Competitive analysis, user interviews, or secondary research.</p>
+            </div>
+
+            <div class="process-step reveal reveal-delay-2" role="listitem">
+              <p class="process-step-num" aria-hidden="true">02</p>
+              <h3>Define</h3>
+              <p>Synthesising findings into personas, HMW questions, and goals.</p>
+            </div>
+
+            <div class="process-step reveal reveal-delay-3" role="listitem">
+              <p class="process-step-num" aria-hidden="true">03</p>
+              <h3>Ideate</h3>
+              <p>Sketching, wireframing, and exploring multiple directions.</p>
+            </div>
+
+            <div class="process-step reveal reveal-delay-1" role="listitem">
+              <p class="process-step-num" aria-hidden="true">04</p>
+              <h3>Prototype</h3>
+              <p>High-fidelity Figma prototype with interactive flows.</p>
+            </div>
+
+            <div class="process-step reveal reveal-delay-2" role="listitem">
+              <p class="process-step-num" aria-hidden="true">05</p>
+              <h3>Test</h3>
+              <p>Usability testing rounds and iterative refinement.</p>
+            </div>
+
+          </div>
+
+          <p>
+            Add any additional narrative about key decisions, pivots, or
+            constraints that shaped the process.
+          </p>
+
+        </section>
+
+
+        <!-- ⑤ VISUALS / IMAGE GALLERY -->
+        <section class="analysis-section reveal" id="images" aria-labelledby="visuals-heading">
+          <span class="section-label">05 — Visuals</span>
+          <h2 id="visuals-heading">Design <em class="accent">Artefacts</em></h2>
+
+          <p>
+            Include key deliverables here — wireframes, mockups, prototypes, posters,
+            or process work. Add captions to provide context for each image.
+          </p>
+
+          <!-- Full-width image -->
+          <div class="img-full reveal reveal-delay-1">
+            <!-- Replace with: <img src="img/mockup-full.jpg" alt="[description]"> -->
+            <div class="img-placeholder" role="img" aria-label="Full-width mockup placeholder"></div>
+          </div>
+
+          <!-- Three-up grid — sketches, wireframes, or details -->
+          <div class="img-grid-3 reveal reveal-delay-2">
+
+            <figure>
+              <div class="img-grid-placeholder" role="img" aria-label="Sketch placeholder"></div>
+              <figcaption>Early sketches</figcaption>
+            </figure>
+
+            <figure>
+              <div class="img-grid-placeholder" role="img" aria-label="Wireframe placeholder"></div>
+              <figcaption>Mid-fi wireframe</figcaption>
+            </figure>
+
+            <figure>
+              <div class="img-grid-placeholder" role="img" aria-label="Final mockup placeholder"></div>
+              <figcaption>Final hi-fi mockup</figcaption>
+            </figure>
+
+          </div>
+
+          <!-- Another full-width image if needed -->
+          <div class="img-full reveal reveal-delay-3">
+            <div class="img-placeholder" role="img" aria-label="Second full-width image placeholder"></div>
+          </div>
+
+        </section>
+
+
+        <!-- ⑥ CHALLENGES -->
+        <section class="analysis-section reveal" id="challenges" aria-labelledby="challenges-heading">
+          <span class="section-label">06 — Challenges</span>
+          <h2 id="challenges-heading">What made it <em class="accent">difficult?</em></h2>
+
+          <p>
+            Describe the specific obstacles you encountered — technical, conceptual,
+            time-based, or interpersonal. Be honest and reflective.
+          </p>
+          <p>
+            For each challenge, explain how you navigated or resolved it. This section
+            demonstrates problem-solving ability and resilience to potential collaborators.
+          </p>
+
+          <!-- You can use an ordered list to structure each challenge -->
+          <ol aria-label="Challenges encountered">
+            <li>
+              <strong>Challenge one</strong> — describe the issue, then explain how
+              you addressed it or what compromises were made.
+            </li>
+            <li>
+              <strong>Challenge two</strong> — describe the issue, then explain how
+              you addressed it or what compromises were made.
+            </li>
+            <li>
+              <strong>Challenge three</strong> — describe the issue, then explain how
+              you addressed it or what compromises were made.
+            </li>
+          </ol>
+
+          <!-- Optional callout for a specific insight from this section -->
+          <blockquote class="callout reveal reveal-delay-1" aria-label="Key challenge insight">
+            <p>
+              "An optional quote or reflection that captures the most important
+              lesson from the challenges you faced."
+            </p>
+          </blockquote>
+
+        </section>
+
+
+        <!-- ⑦ KEY LEARNINGS -->
+        <section class="analysis-section reveal" id="learnings" aria-labelledby="learnings-heading">
+          <span class="section-label">07 — Key Learnings</span>
+          <h2 id="learnings-heading">What I <em class="accent">took away</em></h2>
+
+          <p>
+            Reflect on what this project taught you — about the craft, about users,
+            about collaboration, or about yourself as a designer.
+          </p>
+
+          <!-- Learning cards — add or remove as needed -->
+          <div class="learnings-grid" role="list" aria-label="Key learnings">
+
+            <div class="learning-card reveal reveal-delay-1" role="listitem">
+              <p class="learning-card-icon" aria-hidden="true">01.</p>
+              <h3>Learning Title</h3>
+              <p>A short description of this specific takeaway and why it matters going forward.</p>
+            </div>
+
+            <div class="learning-card reveal reveal-delay-2" role="listitem">
+              <p class="learning-card-icon" aria-hidden="true">02.</p>
+              <h3>Learning Title</h3>
+              <p>A short description of this specific takeaway and why it matters going forward.</p>
+            </div>
+
+            <div class="learning-card reveal reveal-delay-3" role="listitem">
+              <p class="learning-card-icon" aria-hidden="true">03.</p>
+              <h3>Learning Title</h3>
+              <p>A short description of this specific takeaway and why it matters going forward.</p>
+            </div>
+
+            <div class="learning-card reveal reveal-delay-1" role="listitem">
+              <p class="learning-card-icon" aria-hidden="true">04.</p>
+              <h3>Learning Title</h3>
+              <p>A short description of this specific takeaway and why it matters going forward.</p>
+            </div>
+
+          </div>
+
+          <p>
+            End with a forward-looking sentence — how will these learnings influence
+            your next project or professional direction?
+          </p>
+
+        </section>
+
+
+      </div><!-- /case-study-body -->
+    </div><!-- /case-study -->
+
+
+    <!-- ── NEXT PROJECT STRIP ── -->
+    <nav class="next-project" aria-label="Navigate to next project">
+      <div>
+        <p class="next-project-label">Next Project</p>
+        <p class="next-project-title">Project Name</p>
+      </div>
+      <a href="nextProject.html" class="btn-ghost" aria-label="View next project: Project Name">
+        View Project
+      </a>
+    </nav>
+
+  </main>
+
+
+  <!-- ── FOOTER ── -->
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2025 Rita. Built with HTML, CSS &amp; JavaScript.</p>
+    <ul class="footer-links" role="list">
+      <li><a href="https://www.linkedin.com/in/shan-ya-hu/" target="_blank" rel="noopener" aria-label="LinkedIn (opens in new tab)">LinkedIn</a></li>
+      <li><a href="https://github.com/shanya-04" target="_blank" rel="noopener" aria-label="GitHub (opens in new tab)">GitHub</a></li>
+      <li><a href="brand.html">Style Guide</a></li>
+    </ul>
+  </footer>
+
+
+  <script>
+    /* ── SCROLL REVEAL ──────────────────────────────────────────
+       Watches .reveal elements and adds .visible when they enter
+       the viewport. Mirrors the approach in js/main.js.
+    ─────────────────────────────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const revealEls = document.querySelectorAll('.reveal');
+
+      // Immediately reveal anything already in the viewport
+      revealEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('visible');
+        }
+      });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      revealEls.forEach(el => {
+        if (!el.classList.contains('visible')) {
+          revealObserver.observe(el);
+        }
+      });
+
+
+      /* ── ACTIVE TOC HIGHLIGHT ──────────────────────────────────
+         Highlights the TOC link matching the section currently
+         most visible in the viewport as the user scrolls.
+      ─────────────────────────────────────────────────────────── */
+      const tocLinks = document.querySelectorAll('.toc-link');
+      const analysisSections = document.querySelectorAll('.analysis-section[id]');
+
+      if (analysisSections.length > 0 && tocLinks.length > 0) {
+        const tocObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              tocLinks.forEach(link => {
+                link.classList.toggle(
+                  'active',
+                  link.getAttribute('href') === '#' + entry.target.id
+                );
+              });
+            }
+          });
+        }, { threshold: 0.35 });
+
+        analysisSections.forEach(s => tocObserver.observe(s));
+      }
+
+    });
+  </script>
+
+</body>
+</html>
